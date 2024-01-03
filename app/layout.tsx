@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/providers";
+import Home from "./page";
+import HeroSlider from "./(home)/HeroSlider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +25,7 @@ export default function RootLayout({
         <Providers>
           <div className=" flex min-h-screen flex-col justify-between">
             <Navbar></Navbar>
+
             {children}
             <Footer></Footer>
           </div>
