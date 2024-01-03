@@ -1,5 +1,6 @@
+import auth, { googleProvider } from "@/app/firebase/firebase.auth";
 import AuthContext from "@/contexts/AuthContext";
-import auth, { googleProvider } from "@/firebase/firebase.auth";
+
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
