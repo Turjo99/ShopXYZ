@@ -3,11 +3,15 @@ import React from "react";
 import Link from "next/link";
 import { afterLoginNavData, beforeLoginNavData } from "@/data/navData";
 import useTheme from "@/hooks/useTheme";
+import { usePathname } from "next/navigation";
 const user = null;
 const navData = user ? afterLoginNavData : beforeLoginNavData;
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
+  const currentPath = usePathname();
+  console.log(currentPath);
+
   return (
     <div className=" flex justify-around bg-base-100">
       <div className="flex sm:justify-around">
@@ -34,7 +38,16 @@ const Navbar = () => {
           >
             {navData.map(({ path, title }) => (
               <li key={path}>
-                <Link href={path}>{title}</Link>
+                <Link
+                  className={`${
+                    path === currentPath
+                      ? " text-blue-600"
+                      : " transition-colors hover:text-red-400"
+                  }`}
+                  href={path}
+                >
+                  {title}
+                </Link>
               </li>
             ))}
           </ul>
@@ -141,7 +154,16 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">
           {navData.map(({ path, title }) => (
             <li key={path}>
-              <Link href={path}>{title}</Link>
+              <Link
+                className={`${
+                  path === currentPath
+                    ? " text-blue-600"
+                    : " transition-colors hover:text-red-400"
+                }`}
+                href={path}
+              >
+                {title}
+              </Link>
             </li>
           ))}
 
