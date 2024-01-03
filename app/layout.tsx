@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Providers from "@/providers";
 import Home from "./page";
 import HeroSlider from "./(home)/HeroSlider";
+import Toaster from "@/components/Toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
             <Footer></Footer>
           </div>
         </Providers>
+        <Toaster></Toaster>
       </body>
     </html>
   );
