@@ -16,7 +16,7 @@ const HeroSlider = () => {
         navigation
         effect="fade"
         autoplay
-        modules={[Navigation, Pagination, EffectFade, Autoplay]}
+        modules={[Navigation, EffectFade, Autoplay]}
       >
         {mainSlider.map((slider) => (
           <SwiperSlide key={slider.id}>
