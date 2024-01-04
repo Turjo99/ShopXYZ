@@ -44,7 +44,7 @@ const Navbar = () => {
         refresh();
       });
     } catch (error) {
-      toast.error("Successfully not logout!");
+      toast.success("Successfully logout!");
       toast.dismiss(toastId);
     }
   };
