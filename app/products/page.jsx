@@ -1,5 +1,5 @@
 import getProducts from "@/utils/getProducts";
-// import SingleProduct from "./SingleProduct";
+import SingleProduct from "./SingleProduct";
 
 export const revalidate = 0;
 
@@ -12,10 +12,9 @@ const ProductsPage = async ({ searchParams: { categoryId } }) => {
 
   return (
     <div className="mt-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-3 place-items-center  ">
         {products.map((product) => (
-          //   <SingleProduct product={product} key={product._id} />
-          <div className=""></div>
+          <SingleProduct product={product} key={product._id} />
         ))}
       </div>
     </div>
