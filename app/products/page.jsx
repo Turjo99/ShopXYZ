@@ -1,5 +1,6 @@
 import getProducts from "@/utils/getProducts";
 import SingleProduct from "./SingleProduct";
+import { getProductsFromDb } from "../services/products.service";
 
 export const revalidate = 0;
 
@@ -7,8 +8,10 @@ export const metadata = {
   title: "Products - Easy Shop",
 };
 
-const ProductsPage = async ({ searchParams: { categoryId } }) => {
-  const products = await getProducts(categoryId);
+const ProductsPage = async ({ searchParams: { cid } }) => {
+  const cidInt = parseInt(cid);
+  const products = await getProductsFromDb(cidInt);
+  console.log(cidInt);
 
   return (
     <div className="mt-10">

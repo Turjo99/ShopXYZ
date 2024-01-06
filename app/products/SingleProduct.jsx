@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const SingleProduct = ({ product }) => {
-  const { imageUrl, title, price, _id } = product;
-  //   console.log(product);
+  const { imageUrl, title, price, _id, cid } = product;
 
   return (
     <div className="m-5  shadow-xl dark:shadow-blue-900 rounded-lg">

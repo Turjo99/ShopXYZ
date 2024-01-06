@@ -2,12 +2,12 @@ import { ObjectId } from "mongodb";
 import "server-only";
 import DbConnect from "./DbConnect";
 
-export const getProductsFromDb = async (categoryId) => {
+export const getProductsFromDb = async (cid) => {
   const db = await DbConnect();
   const productsCollection = db.collection("products");
   const query = {};
-  if (categoryId) {
-    query.categoryId = categoryId;
+  if (cid) {
+    query.cid = cid;
   }
   return productsCollection.find(query).toArray();
 };
