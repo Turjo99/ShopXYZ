@@ -11,7 +11,7 @@ const Categories = async () => {
   return (
     <>
       <h1 className=" text-3xl font-bold text-center my-5">Categories</h1>
-      <div className="grid grid-cols-3 justify-items-center mb-5  gap-3">
+      <div className=" z-10 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-items-center mb-5  gap-3">
         {categories.map((category) => (
           <SingleCategory
             key={category._id}

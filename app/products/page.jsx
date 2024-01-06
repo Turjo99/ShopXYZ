@@ -5,13 +5,13 @@ import { getProductsFromDb } from "../services/products.service";
 export const revalidate = 0;
 
 export const metadata = {
-  title: "Products - Easy Shop",
+  title: "Products - ShopXYZ Shop",
 };
 
 const ProductsPage = async ({ searchParams: { cid } }) => {
   const cidInt = parseInt(cid);
   const products = await getProductsFromDb(cidInt);
-  console.log(cidInt);
+  //   console.log(cidInt);
 
   return (
     <div className="mt-10">
