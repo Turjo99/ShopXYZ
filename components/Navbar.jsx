@@ -2,7 +2,7 @@
 
 import { afterLoginNavData, beforeLoginNavData } from "@/data/navData";
 import useAuth from "@/hooks/useAuth";
-// import useCart from "@/hooks/useCart";
+import useCart from "@/hooks/useCart";
 import useTheme from "@/hooks/useTheme";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,11 +21,11 @@ const Navbar = () => {
   const path = usePathname();
 
   const [navToggle, setNavToggle] = useState(false);
-  // const { cart } = useCart();
-  // const total = useMemo(
-  //   () => cart.reduce((pre, cur) => cur.price * cur.quantity + pre, 0),
-  //   [cart]
-  // );
+  const { cart } = useCart();
+  const total = useMemo(
+    () => cart.reduce((pre, cur) => cur.price * cur.quantity + pre, 0),
+    [cart]
+  );
 
   const handleLogout = async () => {
     const toastId = toast.loading("Loading...");
@@ -93,7 +93,7 @@ const Navbar = () => {
                 />
               </svg>
               <span className="badge badge-sm indicator-item bg-primary text-white dark:text-gray-300">
-                {/* {cart.length} */}
+                {cart.length}
               </span>
             </div>
           </label>
@@ -103,10 +103,10 @@ const Navbar = () => {
           >
             <div className="card-body">
               <span className="text-lg font-bold">
-                {/* {cart.length} */}
+                {cart.length}
                 Items
               </span>
-              {/* <span className="text-info">Total: ${total.toFixed(2)}</span> */}
+              <span className="text-info">Total: ${total.toFixed(2)}</span>
               <div className="card-actions">
                 <Link href="/checkout" className="block w-full">
                   <button className="btn-primary btn-block btn">
